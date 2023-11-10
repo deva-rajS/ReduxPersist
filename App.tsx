@@ -8,8 +8,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import UsersScreen from './navigation/UsersScreen';
 import HomeScreen from './navigation/HomeScreen';
-import PersonForm from './src/component/personForm';
-import {StyleSheet, Text, View} from 'react-native';
 
 const Stack = createStackNavigator();
 const App = () => {
@@ -34,16 +32,5 @@ const App = () => {
     </Provider>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    margin: 20,
-  },
-  title: {
-    fontWeight: '500',
-    fontSize: 16,
-    paddingBottom: 10,
-  },
-});
 
 export default App;
