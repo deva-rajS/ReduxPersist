@@ -2,9 +2,13 @@ import {View, Text, StyleSheet, Button, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
-export default function Cards({name, age, onEdit, onDelete}) {
+export default function Cards({name, age, onEdit, onDelete, onClick}) {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => {
+        onClick();
+      }}>
       <View style={styles.cardContainer}>
         <FontAwesomeIcon icon={faUser} size={50} style={styles.fA} />
       </View>
@@ -12,15 +16,15 @@ export default function Cards({name, age, onEdit, onDelete}) {
         <Text>{name}</Text>
         <Text>{age}</Text>
       </View>
-      <View style={styles.btnContainer}>
+      {/* <View style={styles.btnContainer}>
         <TouchableOpacity style={styles.btn} onPress={onEdit}>
           <Text style={styles.btnText}>Edit</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btn} onPress={onDelete}>
           <Text style={styles.btnText}>Delete</Text>
         </TouchableOpacity>
-      </View>
-    </View>
+      </View> */}
+    </TouchableOpacity>
   );
 }
 const styles = StyleSheet.create({
